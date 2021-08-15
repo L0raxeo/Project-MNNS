@@ -16,7 +16,7 @@ public class NeuralNetworkM1
         listen();
     }
 
-    public void listen()
+    private void listen()
     {
         String inputLineAsString = scanner.nextLine();
 
@@ -38,7 +38,7 @@ public class NeuralNetworkM1
         }
         else
         {
-            System.out.println("--Sleeping NNS--");
+            System.out.println("--Sleeping NNSMI--");
         }
     }
 
