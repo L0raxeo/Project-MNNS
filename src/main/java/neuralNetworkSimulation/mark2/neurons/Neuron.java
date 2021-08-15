@@ -15,23 +15,16 @@ public class Neuron
 
     public void activate(Neuron[] connectedNeurons)
     {
-        try
-        {
-            if (connectedNeurons[1] == null)
-            {
-                System.out.println("Exception Thrown");
-            }
-            else
-            {
-                System.out.print(code);
-                Neuron[] shiftedNeuronArray = Utils.getShiftedArray(connectedNeurons);
-                shiftedNeuronArray[0].activate(shiftedNeuronArray);
-            }
-        }
-        catch (ArrayIndexOutOfBoundsException e)
+        if (connectedNeurons.length == 1)
         {
             System.out.println(code);
             NeuronNetworkM2.listen();
+        }
+        else
+        {
+            System.out.print(code);
+            Neuron[] shiftedNeuronArray = Utils.getShiftedArray(connectedNeurons);
+            shiftedNeuronArray[0].activate(shiftedNeuronArray);
         }
     }
 
