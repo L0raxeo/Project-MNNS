@@ -1,4 +1,4 @@
-package neuralNetworkSimulation.mark2.neurons;
+package neuralNetworkSimulation.mark3.neurons;
 
 import java.util.ArrayList;
 

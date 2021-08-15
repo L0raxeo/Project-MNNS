@@ -1,5 +1,6 @@
 import neuralNetworkSimulation.mark1.NeuralNetworkM1;
 import neuralNetworkSimulation.mark2.NeuronNetworkM2;
+import neuralNetworkSimulation.mark3.NeuronNetworkM3;
 
 import java.util.Scanner;
 
@@ -20,6 +21,9 @@ public class Launcher
                 break;
             case "mark-II":
                 new NeuronNetworkM2().wake();
+                break;
+            case "mark-III":
+                new NeuronNetworkM3().wake();
                 break;
             default:
                 System.out.println("--Invalid simulation connection terminated--");
