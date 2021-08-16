@@ -4,6 +4,7 @@ import neuralNetworkSimulation.mark3.NeuralNetworkM3;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
+import java.util.ListIterator;
 
 public class NeuronManager
 {
@@ -13,13 +14,6 @@ public class NeuronManager
     public static void createNeuron(Neuron n)
     {
         neurons.add(n);
-    }
-
-    public static void forgetNeuron(Neuron n)
-    {
-        System.out.println("Forgetting Neuron: " + n.code);
-
-        neurons.remove(n);
     }
 
     public static Neuron getNeuron(char code)
@@ -56,17 +50,27 @@ public class NeuronManager
     {
         Neuron[] neuronSequence = charToNeuronArray(splitInput);
 
-        try
+        ListIterator<Neuron> it = neurons.listIterator();
+
+        while (it.hasNext())
         {
-            for(Neuron n : neurons)
+            try
             {
+                Neuron n = it.next();
+
                 n.memory--;
 
                 if (n.memory <= 0)
-                    forgetNeuron(n);
+                {
+                    System.out.println("Forgetting neuron: " + n.code);
+                    it.remove();
+                }
+            }
+            catch (Exception e)
+            {
+                return;
             }
         }
-        catch (ConcurrentModificationException ignored) { }
 
         try
         {
