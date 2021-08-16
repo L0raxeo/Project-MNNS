@@ -5,7 +5,7 @@ import neuralNetworkSimulation.mark2.utils.Utils;
 
 import java.util.Scanner;
 
-public class NeuronNetworkM2
+public class NeuralNetworkM2
 {
 
     /**

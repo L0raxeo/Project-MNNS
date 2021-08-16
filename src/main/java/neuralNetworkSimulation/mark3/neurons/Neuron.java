@@ -1,6 +1,6 @@
 package neuralNetworkSimulation.mark3.neurons;
 
-import neuralNetworkSimulation.mark3.NeuronNetworkM3;
+import neuralNetworkSimulation.mark3.NeuralNetworkM3;
 import neuralNetworkSimulation.mark3.utils.Utils;
 
 public class Neuron
@@ -8,17 +8,23 @@ public class Neuron
 
     public final char code;
 
+    public int memory;
+
     public Neuron(char code)
     {
         this.code = code;
+
+        memory = 15;
     }
 
     public void activate(Neuron[] connectedNeurons)
     {
+        memory += 5;
+
         if (connectedNeurons.length == 1)
         {
             System.out.println(code);
-            NeuronNetworkM3.listen();
+            NeuralNetworkM3.listen();
         }
         else
         {

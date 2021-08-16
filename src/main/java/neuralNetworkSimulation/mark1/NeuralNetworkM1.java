@@ -29,7 +29,7 @@ public class NeuralNetworkM1
      * program. Therefore, the AI cannot adapt to a language
      * that cannot be identified by Google. For example a made
      * up language cannot be learned since Google's AI cannot
-     * learn it's speech pattern. The goal of this experiment
+     * learn its speech pattern. The goal of this experiment
      * is to attempt to develop an AI that learns to speak from
      * scratch. Therefore, it can learn to speak any language-
      * even non-official languages.

@@ -1,6 +1,6 @@
 package neuralNetworkSimulation.mark2.neurons;
 
-import neuralNetworkSimulation.mark2.NeuronNetworkM2;
+import neuralNetworkSimulation.mark2.NeuralNetworkM2;
 import neuralNetworkSimulation.mark2.utils.Utils;
 
 public class Neuron
@@ -18,7 +18,7 @@ public class Neuron
         if (connectedNeurons.length == 1)
         {
             System.out.println(code);
-            NeuronNetworkM2.listen();
+            NeuralNetworkM2.listen();
         }
         else
         {
