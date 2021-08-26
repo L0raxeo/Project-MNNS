@@ -22,20 +22,11 @@ public class Path
         def = sBuilder.toString();
     }
 
-    public void trigger(boolean isLastPath)
+    public void trigger()
     {
         memory *= 2;
 
-        if (isLastPath)
-        {
-            System.out.println(def);
-
-            NeuralNetworkM5.listen();
-        }
-        else
-        {
-            System.out.print(def);
-        }
+        System.out.println(def);
     }
 
 }
