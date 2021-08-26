@@ -1,4 +1,4 @@
-package neuralNetworkSimulation.mark5.clusters;
+package neuralNetworkSimulation.mark5.nucleus;
 
 import neuralNetworkSimulation.mark5.paths.Path;
 
