@@ -5,9 +5,7 @@ import neuralNetworkSimulation.mark3.utils.Utils;
 
 public class Neuron
 {
-/*
- temp commit
- */
+
     public final char code;
 
     public int memory;

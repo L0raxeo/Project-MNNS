@@ -1,6 +1,4 @@
-package neuralNetworkSimulation.mark3.neurons;
-
-import neuralNetworkSimulation.mark3.NeuralNetworkM3;
+package neuralNetworkSimulation.mark4.neurons;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -30,25 +28,11 @@ public class NeuronManager
         Neuron newNeuron = new Neuron(code);
         createNeuron(newNeuron);
 
-        return null;
+        return newNeuron;
     }
 
-    public static Neuron[] charToNeuronArray(char[] splitInput)
+    public static void decreaseAllNeuronMemory()
     {
-        Neuron[] neuronSequence = new Neuron[splitInput.length];
-
-        for (int i = 0; i < splitInput.length; i++)
-        {
-            neuronSequence[i] = getNeuron(splitInput[i]);
-        }
-
-        return neuronSequence;
-    }
-
-    public static void activateNeuronSequence(char[] splitInput)
-    {
-        Neuron[] neuronSequence = charToNeuronArray(splitInput);
-
         ListIterator<Neuron> it = neurons.listIterator();
 
         while (it.hasNext())
@@ -70,15 +54,30 @@ public class NeuronManager
                 return;
             }
         }
+    }
 
-        try
+    public static Neuron[] charToNeuronArray(char[] splitInput)
+    {
+        Neuron[] neuronSequence = new Neuron[splitInput.length];
+
+        for (int i = 0; i < splitInput.length; i++)
         {
-            neuronSequence[0].activate(neuronSequence);
+            neuronSequence[i] = getNeuron(splitInput[i]);
         }
-        catch (NullPointerException e)
+
+        return neuronSequence;
+    }
+
+    public static String getNeuronsAsString(Neuron[] neurons)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Neuron n : neurons)
         {
-            NeuralNetworkM3.listen();
+            stringBuilder.append(n.code);
         }
+
+        return stringBuilder.toString();
     }
 
 }
