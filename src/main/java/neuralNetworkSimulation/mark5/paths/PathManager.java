@@ -47,7 +47,7 @@ public class PathManager
 
                 if (n.memory <= 0)
                 {
-                    System.out.println("Forgetting neuron: " + n.def);
+                    System.out.println("Forgetting path: " + n.def);
                     it.remove();
                 }
             }
@@ -58,26 +58,22 @@ public class PathManager
         }
     }
 
-    public static void triggerPathSequence(String input)
+    public static Path[] stringToPathArray(String input)
     {
-        String[] pathSequence = input.split(" ");
+        String[] splitStrings = input.split(" ");
 
-        for (int i = 0; i < pathSequence.length; i++)
+        Path[] convertedPaths = new Path[splitStrings.length];
+
+        for (int i = 0; i < convertedPaths.length; i++)
         {
-            boolean isLastPath = pathSequence.length < i + 1;
+            Path path = getPath(splitStrings[i]);
+            convertedPaths[i] = path;
 
-            triggerPath(pathSequence[i], isLastPath);
+            if (path == null)
+                return null;
         }
-    }
 
-    public static void triggerPath(String word, boolean isLastPath)
-    {
-        Path path = getPath(word);
-
-        if (path != null)
-            path.trigger(isLastPath);
-        //else
-        //    NeuralNetworkM5.listen();
+        return convertedPaths;
     }
 
 }

@@ -1,6 +1,7 @@
 package neuralNetworkSimulation.mark5;
 
 import neuralNetworkSimulation.mark5.neurons.NeuronManager;
+import neuralNetworkSimulation.mark5.nuclei.NucleusManager;
 import neuralNetworkSimulation.mark5.paths.PathManager;
 import neuralNetworkSimulation.mark5.utils.Utils;
 
@@ -37,12 +38,14 @@ public class NeuralNetworkM5
         {
             case 1:
                 NeuronManager.triggerNeuron(NeuronManager.getNeuron(keyAsCharArray[0]));
+                listen();
                 break;
             case 0:
                 listen();
                 break;
             default:
-                PathManager.triggerPathSequence(input);
+                NucleusManager.triggerNucleus(input);
+                listen();
                 break;
         }
     }
@@ -51,8 +54,8 @@ public class NeuralNetworkM5
     {
         handleInput(scanner.nextLine());
 
-        PathManager.decreaseAllPathMemory();
-        NeuronManager.decreaseAllNeuronMemory();
+        //PathManager.decreaseAllPathMemory();
+        //NeuronManager.decreaseAllNeuronMemory();
     }
 
 }
