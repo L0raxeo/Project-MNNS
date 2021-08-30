@@ -1,6 +1,5 @@
 package neuralNetworkSimulation.mark5.paths;
 
-import neuralNetworkSimulation.mark5.NeuralNetworkM5;
 import neuralNetworkSimulation.mark5.neurons.Neuron;
 
 public class Path
