@@ -5,6 +5,7 @@ import neuralNetworkSimulation.mark4.NeuralNetworkM4;
 import neuralNetworkSimulation.mark5.NeuralNetworkM5;
 import neuralNetworkSimulation.mark6.NeuralNetworkM6;
 import neuralNetworkSimulation.mark7.NeuralNetworkM7;
+import neuralNetworkSimulation.mark8.NeuralNetworkM8;
 
 import java.util.Scanner;
 
@@ -40,6 +41,9 @@ public class Launcher
                 break;
             case "mark-VII":
                 new NeuralNetworkM7().wake();
+                break;
+            case "mark-VIII":
+                new NeuralNetworkM8().wake();
                 break;
             default:
                 System.out.println("--Invalid simulation connection terminated--");

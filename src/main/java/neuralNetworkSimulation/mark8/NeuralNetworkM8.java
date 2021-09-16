@@ -34,15 +34,10 @@ public class NeuralNetworkM8
                 listen();
                 break;
             default:
-                triggerNucleus(input);
+                NucleusManager.triggerNucleus(input);
                 listen();
                 break;
         }
-    }
-
-    public static void triggerNucleus(String input)
-    {
-
     }
 
     public static void listen()

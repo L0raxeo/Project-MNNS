@@ -14,20 +14,26 @@ public class NucleusManager
     {
         for (Nucleus n : nuclei)
         {
-            if (n.def.equals(def))
+            if (n.def.equals(def + " "))
             {
                 return n;
             }
         }
 
-        defineNucleus(PathManager.stringToPathArray(def));
+        Path[] paths = PathManager.stringToPathArray(def);
+
+        if (paths != null)
+            defineNucleus(paths);
 
         return null;
     }
 
     public static void defineNucleus(Path[] paths)
     {
-        nuclei.add(new Nucleus(paths));
+        Nucleus nucleus = new Nucleus(paths);
+        nuclei.add(nucleus);
+
+        System.out.println("Defining Nucleus: " + nucleus.def);
     }
 
     public static void decreaseConfidenceOfUnusedNuclei(Nucleus origin, Nucleus usedBranch)
@@ -46,6 +52,14 @@ public class NucleusManager
                 }
             }
         }
+    }
+
+    public static void triggerNucleus(String input)
+    {
+        Nucleus triggeredNucleus = getNucleus(input);
+
+        if (triggeredNucleus != null)
+            triggeredNucleus.trigger();
     }
 
 }

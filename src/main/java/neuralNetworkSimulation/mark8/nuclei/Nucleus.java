@@ -25,4 +25,9 @@ public class Nucleus
         def = stringBuilder.toString();
     }
 
+    public void trigger()
+    {
+
+    }
+
 }
