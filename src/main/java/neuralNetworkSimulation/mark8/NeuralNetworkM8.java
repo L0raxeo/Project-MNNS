@@ -24,20 +24,12 @@ public class NeuralNetworkM8
     {
         char[] keyAsCharArray = Utils.getStringAsCharArray(input);
 
-        switch (keyAsCharArray.length)
+        if (keyAsCharArray.length != 0)
         {
-            case 1:
-                System.out.println(keyAsCharArray[0]);
-                listen();
-                break;
-            case 0:
-                listen();
-                break;
-            default:
-                NucleusManager.triggerNucleus(input);
-                listen();
-                break;
+            NucleusManager.triggerNucleus(input);
         }
+
+        listen();
     }
 
     public static void listen()
